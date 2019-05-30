@@ -58,7 +58,10 @@ pipeline {
         }
       }
     }
-    stage('Promote STAGE') {
+   stage 'Promotion' {
+     input 'Deploy to Stage?'
+   }
+   stage('Promote STAGE') {
       steps {
         script {
           openshift.withCluster() {
