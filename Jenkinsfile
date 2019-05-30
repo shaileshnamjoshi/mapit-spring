@@ -58,8 +58,10 @@ pipeline {
         }
       }
     }
-   stage 'Promotion' {
-     input 'Deploy to Stage?'
+   stage ('Promotion') {
+      steps{
+        input 'Deploy to Stage?'     
+      }
    }
    stage('Promote STAGE') {
       steps {
